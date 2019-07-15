@@ -30,6 +30,9 @@
 		3952698A22DCAE3400768AB0 /* AddNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952698822DCAE3400768AB0 /* AddNewUserViewController.swift */; };
 		3952698B22DCAE3400768AB0 /* AddNewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3952698922DCAE3400768AB0 /* AddNewUserViewController.xib */; };
 		3952698E22DCAEAF00768AB0 /* AssemblyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952698D22DCAEAF00768AB0 /* AssemblyManager.swift */; };
+		3952699022DCB84100768AB0 /* AddNewUserViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952698F22DCB84100768AB0 /* AddNewUserViewController+UITextFieldDelegate.swift */; };
+		3952699322DCCF3700768AB0 /* InsertNewUserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952699222DCCF3700768AB0 /* InsertNewUserDelegate.swift */; };
+		3952699522DCCFCA00768AB0 /* ViewController+InserNewUserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952699422DCCFCA00768AB0 /* ViewController+InserNewUserDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		3952698822DCAE3400768AB0 /* AddNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserViewController.swift; sourceTree = "<group>"; };
 		3952698922DCAE3400768AB0 /* AddNewUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewUserViewController.xib; sourceTree = "<group>"; };
 		3952698D22DCAEAF00768AB0 /* AssemblyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyManager.swift; sourceTree = "<group>"; };
+		3952698F22DCB84100768AB0 /* AddNewUserViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddNewUserViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		3952699222DCCF3700768AB0 /* InsertNewUserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertNewUserDelegate.swift; sourceTree = "<group>"; };
+		3952699422DCCFCA00768AB0 /* ViewController+InserNewUserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+InserNewUserDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 				3952697522DC92E400768AB0 /* ViewController+UITableViewDataSource.swift */,
 				3952697722DC92F800768AB0 /* ViewController+UITableViewDelegate.swift */,
 				3952698022DCA84A00768AB0 /* ViewController+UISearchResultsUpdating.swift */,
+				3952699422DCCFCA00768AB0 /* ViewController+InserNewUserDelegate.swift */,
 			);
 			path = "ViewController+Extensions";
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				3952697A22DC968100768AB0 /* NibLoadable.swift */,
+				3952699222DCCF3700768AB0 /* InsertNewUserDelegate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 			children = (
 				3952698822DCAE3400768AB0 /* AddNewUserViewController.swift */,
 				3952698922DCAE3400768AB0 /* AddNewUserViewController.xib */,
+				3952699122DCB90B00768AB0 /* AddNewUserViewController+Extensions */,
 			);
 			path = "Add New User Controller";
 			sourceTree = "<group>";
@@ -244,6 +253,14 @@
 				3952698D22DCAEAF00768AB0 /* AssemblyManager.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		3952699122DCB90B00768AB0 /* AddNewUserViewController+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3952698F22DCB84100768AB0 /* AddNewUserViewController+UITextFieldDelegate.swift */,
+			);
+			path = "AddNewUserViewController+Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,14 +346,17 @@
 				3952698122DCA84A00768AB0 /* ViewController+UISearchResultsUpdating.swift in Sources */,
 				3952697822DC92F800768AB0 /* ViewController+UITableViewDelegate.swift in Sources */,
 				3952694522DC78DA00768AB0 /* AppDelegate.swift in Sources */,
+				3952699022DCB84100768AB0 /* AddNewUserViewController+UITextFieldDelegate.swift in Sources */,
 				3952697F22DC9A8700768AB0 /* String+Extension.swift in Sources */,
 				3952697622DC92E400768AB0 /* ViewController+UITableViewDataSource.swift in Sources */,
 				3952697B22DC968100768AB0 /* NibLoadable.swift in Sources */,
 				3952698A22DCAE3400768AB0 /* AddNewUserViewController.swift in Sources */,
+				3952699322DCCF3700768AB0 /* InsertNewUserDelegate.swift in Sources */,
 				3952697D22DC9A7D00768AB0 /* UIColor+Extension.swift in Sources */,
 				3952698E22DCAEAF00768AB0 /* AssemblyManager.swift in Sources */,
 				3952697322DC909600768AB0 /* UsersTableViewCell.swift in Sources */,
 				3952696A22DC7F6F00768AB0 /* User+Extensions.swift in Sources */,
+				3952699522DCCFCA00768AB0 /* ViewController+InserNewUserDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

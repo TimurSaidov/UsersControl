@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fmv-Eq-KGK">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bye-GI-pn8">
@@ -49,7 +49,7 @@
                 <constraint firstItem="bye-GI-pn8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Wbl-3M-fzx"/>
                 <constraint firstAttribute="bottom" secondItem="fmv-Eq-KGK" secondAttribute="bottom" id="Z2O-Uc-9S7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fmv-Eq-KGK" secondAttribute="trailing" id="kjR-7I-cZ0"/>
-                <constraint firstItem="fmv-Eq-KGK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mJn-AD-QaW"/>
+                <constraint firstItem="fmv-Eq-KGK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mJn-AD-QaW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

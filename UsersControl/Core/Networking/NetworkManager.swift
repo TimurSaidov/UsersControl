@@ -87,4 +87,50 @@ class NetworkManager: NetworkManagerProtocol {
         }
         task.resume()
     }
+    
+    static func postNewUser(user: User, completionHandler: @escaping (Result<String>) -> Void) {
+        let fetchUsersApi = api + "/users.json"
+        guard let url = URL(string: fetchUsersApi) else {
+            completionHandler(Result.error("URL can't be created from this API: \(fetchUsersApi)"))
+            return
+        }
+        let userData = user.json
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: userData, options: []) else { return }
+        request.httpBody = httpBody
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    completionHandler(Result.error(error.localizedDescription))
+                }
+                return
+            }
+
+            guard
+                let data = data,
+                (response as? HTTPURLResponse)?.statusCode == 201
+                else {
+                DispatchQueue.main.async {
+                    completionHandler(Result.error("Error Response: \(String(describing: response))"))
+                }
+                return
+            }
+            print(response as Any)
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json)
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            DispatchQueue.main.async {
+                completionHandler(Result.success("Success"))
+            }
+        }
+        task.resume()
+    }
 }

@@ -14,4 +14,6 @@ extension String {
     // MARK: Public
     
     static let empty = ""
+    static let space = " "
+    static let dog = "@"
 }

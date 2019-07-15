@@ -67,6 +67,7 @@ class ViewController: UIViewController {
     
     @objc private func handleAdd() {
         let addNewUserController = AssemblyManager.makeAddNewUserController()
+        addNewUserController.insertNewUserDelegate = self
         let navController = UINavigationController(rootViewController: addNewUserController)
         present(navController, animated: true, completion: nil)
     }
