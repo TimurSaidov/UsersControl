@@ -21,6 +21,15 @@ class AddNewUserViewController: UIViewController {
     
     // MARK: Public Properties
     
+    var user: User? {
+        didSet {
+            print("user: \(String(describing: user?.firstName)) \(String(describing: user?.lastName))")
+        }
+    }
+    
+    
+    // MARK: Public Properties
+    
     weak var insertNewUserDelegate: InserNewUserDelegate?
     
     
@@ -77,10 +86,13 @@ class AddNewUserViewController: UIViewController {
     // MARK: Private
     
     private func setupNavBar() {
+        navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(handleSave))
-        navigationItem.rightBarButtonItem?.isEnabled = false
+        if user == nil {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(handleSave))
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
     }
     
     @objc private func handleCancel() {
@@ -113,9 +125,22 @@ class AddNewUserViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = #colorLiteral(red: 0.9332318306, green: 0.9333917499, blue: 0.933221817, alpha: 1)
         darkBlueBackgroundView.backgroundColor = UIColor.darkBlue
+        setupTextFieldsDelegate()
+        setupTextFields()
+    }
+    
+    private func setupTextFieldsDelegate() {
         userFirstNameTextField.delegate = self
         userLastNameTextField.delegate = self
         userEmailTextField.delegate = self
+    }
+    
+    private func setupTextFields() {
+        if user != nil {
+            userFirstNameTextField.text = user?.firstName
+            userLastNameTextField.text = user?.lastName
+            userEmailTextField.text = user?.email
+        }
     }
     
     private func hideKeyboard() {
